@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    position: fixed;
   }
 
   
@@ -15,17 +16,17 @@
 
 #leftWindow-on {
     background-color: white;
-    height: 10030vmin;
-    width: 3030vmax;
+    height: 100vh;
+    width: 30vw;
     position: absolute;
     left: 0;
     top: 0;
     overflow: hidden;
-    font-size: 430vmin;
+    font-size: 4vh;
   }
   
   #leftWindow-off {
-    height: 10030vmin;
+    height: 100vh;
     width: 0;
     
     position: absolute;
@@ -34,23 +35,23 @@
   }
   
   #wrap {
-    width: 10030vmin;
-    height: 10030vmin;
+    width: 100vh;
+    height: 100vh;
     margin: 0 auto;
   }
   
   #leftWindow-button {
-    height: 1030vmin;
-    width: 130vmax;
+    height: 10vh;
+    width: 1vw;
     position: absolute;
-    left: 3030vmax;
-    top: 5030vmin;
+    left: 30vw;
+    top: 50vh;
     background-color: white;
     
   }
   
   #menu {
-    width: 3030vmax;
+    width: 30vw;
     
   }
   
@@ -63,8 +64,8 @@
   #menu > ul > li {
     list-style: none;
     width: 100px;
-    height: 1030vmin;
-    line-height: 1030vmin;
+    height: 10vh;
+    line-height: 10vh;
     text-align: center;
     margin-right: 5px;
     overflow: hidden;
@@ -94,7 +95,7 @@
 }
 
 #time-window{
-    width: 3030vmax;
+    width: 100px;
     height: 30px;
 }
 
@@ -104,6 +105,6 @@ table, th, td {
 }
 
 #time-table{
-    width: 3030vmax;
-    height: calc(10030vmin - 1030vmin);
+    width: 30vw;
+    height: calc(100vh - 10vh);
 }
