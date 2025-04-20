@@ -25,7 +25,7 @@
                         {% if list %}
                         {% for time in list%}
                         <tr>
-                            <td>{{time}}</td>
+                            <td id="time{{time[1]}}">{{time[0]}}</td>
                         </tr>
                         {% endfor %}
                         {% else %}

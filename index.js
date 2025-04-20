@@ -20,13 +20,13 @@ function getToday(){
 }
 async function api() {
     let i;
-    const response = await fetch(`https://open.neis.go.kr/hub/hisTimetable?ATPT_OFCDC_SC_CODE=J10&SD_SCHUL_CODE=7530629&ALL_TI_YMD=${'20250421'}&DDDEP_NM=컴퓨터소프트웨어과&GRADE=3&CLASS_NM=9&Type=json&Key=d3343083782d4681922efb5889452f48`);
+    const response = await fetch(`https://open.neis.go.kr/hub/hisTimetable?ATPT_OFCDC_SC_CODE=J10&SD_SCHUL_CODE=7530629&ALL_TI_YMD=${getToday()}&DDDEP_NM=컴퓨터소프트웨어과&GRADE=3&CLASS_NM=9&Type=json&Key=d3343083782d4681922efb5889452f48`);
     const obj = await response.json();
     let classList = [];
     try{
         for(i = 0;i < obj.hisTimetable[1].row.length;i++)
             {
-                classList.push(obj.hisTimetable[1].row[i].ITRT_CNTNT);
+                classList.push([obj.hisTimetable[1].row[i].ITRT_CNTNT, i + 1]);
             }
             return classList;
     }
