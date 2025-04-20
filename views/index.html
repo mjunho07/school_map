@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<title>map</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <div id="leftWindow" class="">
+            <div id="leftWindow-on">
+                
+                <div id="menu">
+                    <ul>
+                        <li class="on">검색</li>
+                        <li class="off">시간표</li>
+                    </ul>
+                </div>
+                <div id="search-window" class="hidden">
+                    <input type="text" id="search-box">
+                </div>
+                <div id="time-window">
+                    <table id="time-table">
+                        {% if list %}
+                        {% for time in list%}
+                        <tr>
+                            <td>{{time}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td>시간표 없음</td>
+                        </tr>
+                        {% endif %}
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="leftWindow-button"></div>
+    </div>
+</body>
+</html>
