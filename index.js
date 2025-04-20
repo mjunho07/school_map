@@ -81,7 +81,7 @@ nunjucks.configure('views', {
 
 app.get('/',async (req, res)=>{
     const resultList = await api()
-    alert(`${resultList}`);
+    console.log(resultList);
     res.render('index',{list:resultList});
 
 })
