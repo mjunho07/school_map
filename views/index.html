@@ -8,37 +8,37 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="leftWindow" class="">
-            <div id="leftWindow-on">
-                
-                <div id="menu">
-                    <ul>
-                        <li class="on">검색</li>
-                        <li class="off">시간표</li>
-                    </ul>
-                </div>
-                <div id="search-window" class="hidden">
-                    <input type="text" id="search-box">
-                </div>
-                <div id="time-window">
-                    <table id="time-table">
-                        {% if list %}
-                        {% for time in list%}
-                        <tr>
-                            <td id="time{{time[1]}}">{{time[0]}}</td>
-                        </tr>
-                        {% endfor %}
-                        {% else %}
-                        <tr>
-                            <td>시간표 없음</td>
-                        </tr>
-                        {% endif %}
-                        
-                    </table>
-                </div>
+        <div id="left-window" class="">
+            <div id="menu">
+                <ul>
+                    <li class="on" id="menu1">검색</li>
+                    <li class="off" id="menu2">시간표</li>
+                </ul>
             </div>
+            <div id="search-window" class="">
+                <input type="text" id="search-box">
+            </div>
+            <div id="time-window" class="hidden">
+                <table id="time-table">
+                    {% if list %}
+                    {% for time in list%}
+                    <tr>
+                        <td id="time{{time[1]}}">{{time[0]}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>시간표 없음</td>
+                    </tr>
+                    {% endif %}
+                    
+                </table>
+            </div>
+
         </div>
-        <div id="leftWindow-button"></div>
+        <div id="left-window-button" class="location-center"></div>
     </div>
+    <script src="menu.js"></script>
+    <script src="leftWindowButton.js"></script>
 </body>
 </html>

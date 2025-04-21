@@ -13,7 +13,7 @@
     user-select:none;
   }
 
-#leftWindow-on {
+#left-window {
     background-color: white;
     height: 100vh;
     width: 30vw;
@@ -24,63 +24,61 @@
     font-size: 4vh;
   }
   
-  #leftWindow-off {
-    height: 100vh;
-    width: 0;
-    
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+
+
+#wrap {
+  width: 100vh;
+  height: 100vh;
+  margin: 0 auto;
+}
   
-  #wrap {
-    width: 100vh;
-    height: 100vh;
-    margin: 0 auto;
-  }
+#left-window-button {
+  height: 10vh;
+  width: 1vw;
+  position: absolute;
+  top: 50vh;
+  background-color: white;
   
-  #leftWindow-button {
-    height: 10vh;
-    width: 1vw;
-    position: absolute;
-    left: 30vw;
-    top: 50vh;
-    background-color: white;
-    
-  }
+}
+
+.location-center{
+  left: 30vw;
+}
+.location-left{
+  left: 0vw;
+}
+
+#menu {
+  width: 30vw;
+}
+
+#menu > ul {
+  display: flex;
   
-  #menu {
-    width: 30vw;
-    
-  }
-  
-  #menu > ul {
-    display: flex;
-    
-    padding: 0;
-  }
-  
-  #menu > ul > li {
-    list-style: none;
-    width: 100px;
-    height: 10vh;
-    line-height: 10vh;
-    text-align: center;
-    margin-right: 5px;
-    overflow: hidden;
-  }
-#menu>ul>li:hover{
-    background-color: gray;
+  padding: 0;
+}
+
+#menu > ul > li {
+  list-style: none;
+  width: 15vw;
+  height: 10vh;
+  line-height: 10vh;
+  text-align: center;
+  margin-right: 5px;
+  overflow: hidden;
+}
+#menu>ul>.off:hover{
+    background-color: darkgray;
     
 }
-#leftWindow-button:hover{
+#left-window-button:hover{
     background-color: darkgray;
 }
 .on{
     background-color: white;
 }
 .off{
-    background-color: darkgray;
+    background-color: gray;
 }
 
 .hidden{
@@ -89,14 +87,10 @@
 
 #search-box{
     margin-top: 10px;
-    margin-left: 5px;
-    width: 190px;
+    margin-left: 1vw;
+    width: 28vw;
 }
 
-#time-window{
-    width: 100px;
-    height: 30px;
-}
 
 table, th, td {
     border: 0.1px solid black;
@@ -107,4 +101,9 @@ table, th, td {
 #time-table{
     width: 30vw;
     height: calc(100vh - 10vh);
+}
+
+#search-box{
+  height: 5vh;
+  border: 0.01vh solid black;
 }
