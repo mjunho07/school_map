@@ -20,7 +20,9 @@ function getToday(){
 }
 async function api() {
     let i;
-    const response = await fetch(`https://open.neis.go.kr/hub/hisTimetable?ATPT_OFCDC_SC_CODE=J10&SD_SCHUL_CODE=7530629&ALL_TI_YMD=${getToday()}&GRADE=3&CLASS_NM=9&Type=json&Key=d3343083782d4681922efb5889452f48&_=${Date.now()}`);
+    const response = await fetch(`https://open.neis.go.kr/hub/hisTimetable?ATPT_OFCDC_SC_CODE=J10&SD_SCHUL_CODE=7530629&ALL_TI_YMD=${getToday()}&GRADE=3&CLASS_NM=9&Type=json&Key=d3343083782d4681922efb5889452f48&_=${Date.now()}`, {
+        cache: "no-store"
+      });
     const obj = await response.json();
     let classList = [];
     try{
