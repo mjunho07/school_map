@@ -59,26 +59,6 @@ nunjucks.configure('views', {
     express: app
 })
 
-// const {Schema} = mongoose;
-
-// // mongoose connect
-// mongoose
-//     .connect('mongodb+srv://mjh0317:mjhjunho0317mmm7@cluster0.zuq3l.mongodb.net/school_map') // /<> 해당 데이터베이스에 연결됨
-//     .then(() => console.log('DB interface'))
-//     .catch(e => console.error(e))
-
-
-// //mongose set
-// const WritingSchema = new Schema({
-//     title: String,
-//     contents: String,
-//     date: {
-//         type: Date,
-//         default: Date.now,
-//     }
-// })
-
-// const Writing = mongoose.model('Writing', WritingSchema)
 
 
 app.get('/',async (req, res)=>{
