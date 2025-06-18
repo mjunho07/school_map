@@ -23,13 +23,13 @@
     overflow: hidden;
     font-size: 4vh;
   }
-#map, #icons{
+#map{
   object-fit: contain;
   position: absolute;
   left: 31vw;
   top: 0;
   width: 69vw;
-  height: 100%;
+  height: 100vh;
 }  
 #icons{
   object-fit: contain;
@@ -37,6 +37,8 @@
   left: 31vw;
   top: 0;
   z-index: 99;;
+  width: 69vw;
+  height: 100vh;
 }  
 
 
