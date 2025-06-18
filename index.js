@@ -6,15 +6,13 @@ import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
 // import { dirname } from 'path';
 import path from 'path'
-// import fs from 'fs'
-// import { stringify } from 'querystring';
-import mongoose from 'mongoose';
+
 
 function getToday(){
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = ("0" + (1 + date.getMonth())).slice(-2);
-    var day = ("0" + date.getDate()).slice(-2);
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = ("0" + (1 + date.getMonth())).slice(-2);
+    const day = ("0" + date.getDate()).slice(-2);
 
     return year + month + day;
 }
@@ -63,7 +61,6 @@ nunjucks.configure('views', {
 
 app.get('/',async (req, res)=>{
     const resultList = await api();
-    console.log(`test : ${resultList}`);
     res.render('index',{list:resultList});
 
 })
