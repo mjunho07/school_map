@@ -6,7 +6,7 @@
 
   
   body {
-    background-color: black;
+    background-color: rgb(37, 37, 37);
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -15,7 +15,7 @@
 
 #left-window {
     background-color: white;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 30vw;
     position: absolute;
     left: 0;
@@ -24,36 +24,42 @@
     font-size: 4vh;
   }
 #map{
+  height: calc(var(--vh, 1vh) * 100);
   object-fit: contain;
   position: absolute;
-  left: 31vw;
   top: 0;
-  width: 69vw;
-  height: 100vh;
-}  
+}
 #icons{
+  pointer-events:none;
+  height: calc(var(--vh, 1vh) * 100);
   object-fit: contain;
   position: absolute;
-  left: 31vw;
   top: 0;
-  z-index: 99;;
-  width: 69vw;
-  height: 100vh;
+  z-index: 100;
+  
 }  
 
+.icons-and-map-left-win-on{
+  left: 31vw;
+  width: 69vw;
+}
 
+.icons-and-map-left-win-off{
+  left: 1vw;
+  width: 99vw;
+}
 
 #wrap {
-  width: 100vh;
-  height: 100vh;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
   margin: 0 auto;
 }
   
 #left-window-button {
-  height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
   width: 1vw;
   position: absolute;
-  top: 50vh;
+  top: calc(var(--vh, 1vh) * 50);
   background-color: white;
   
 }
@@ -78,7 +84,7 @@
 #menu > ul > li {
   list-style: none;
   width: 15vw;
-  height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
   line-height: 10vh;
   text-align: center;
   margin-right: 5px;
@@ -106,6 +112,7 @@
     margin-top: 10px;
     margin-left: 1vw;
     width: 28vw;
+    height: 5vh;
 }
 
 
@@ -117,10 +124,8 @@ table, th, td {
 
 #time-table{
     width: 30vw;
-    height: calc(100vh - 10vh);
+    height: calc(var(--vh, 1vh) * 90);
 }
 
-#search-box{
-  height: 5vh;
-  border: 0.01vh solid black;
-}
+
+

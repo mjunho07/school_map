@@ -3,12 +3,22 @@
 <html>
 <head>
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>map</title>
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
     
     <div id="wrap">
+		<div id="map-menu">
+            <ul>
+                <li id="map-menu-B1" role="tab">B1</li>
+                <li id="map-menu-1floor" role="tab">1</li>
+				<li id="map-menu-2floor" role="tab">2</li>
+				<li id="map-menu-3floor" role="tab">3</li>
+				<li id="map-menu-all" role="tab">all</li>
+            </ul>
+        </div>
 
         <div id="left-window" class="">
             <div id="menu">
@@ -39,9 +49,9 @@
 
         </div>
         <div id="left-window-button" class="location-center"></div>
-        <svg id="icons" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="247.5px" height="184.773px" viewBox="0 0 247.5 184.773" enable-background="new 0 0 247.5 184.773" xml:space="preserve">
-<g>
+<svg id="icons" class="icons-and-map-left-win-on" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+ width="247.5px" height="184.773px" viewBox="0 0 247.5 184.773" enable-background="new 0 0 247.5 184.773" xml:space="preserve">
+<g class="3floor">
 	<text transform="matrix(1 0 0 1 189.25 166.2908)" font-family="'Dotum'" font-size="6">멀티 </text>
 	<text transform="matrix(1 0 0 1 186.25 173.491)" font-family="'Dotum'" font-size="6">라운지</text>
 	<text transform="matrix(1 0 0 1 217.5 171.4998)" font-family="'Dotum'" font-size="6">다목적홀</text>
@@ -112,7 +122,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="2floor">
 	<text transform="matrix(1 0 0 1 8.125 107.8865)" font-family="'Dotum'" font-size="6">성적 </text>
 	<text transform="matrix(1 0 0 1 5.125 115.0867)" font-family="'Dotum'" font-size="6">처리실</text>
 	<text transform="matrix(1 0 0 1 35.248 112.1365)" font-family="'Dotum'" font-size="6">본교무실</text>
@@ -210,7 +220,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="1floor">
 	<text transform="matrix(1 0 0 1 123.75 61.6365)" font-family="'Dotum'" font-size="6">3-1</text>
 	<text transform="matrix(1 0 0 1 95.167 61.6365)" font-family="'Dotum'" font-size="6">3-2</text>
 	<text transform="matrix(1 0 0 1 66.584 61.6365)" font-family="'Dotum'" font-size="6">3-3</text>
@@ -308,7 +318,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="B1floor">
 	<text transform="matrix(1 0 0 1 35.3379 12.1365)" font-family="'Dotum'" font-size="6">3-10</text>
 	<text transform="matrix(1 0 0 1 65.4961 12.1365)" font-family="'Dotum'" font-size="6">3-9</text>
 	<text transform="matrix(1 0 0 1 94.2578 12.1365)" font-family="'Dotum'" font-size="6">3-8</text>
@@ -404,10 +414,11 @@
 		</g>
 	</g>
 </g>
-        </svg>
-        <svg id="map" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg>
+
+<svg id="map" class="icons-and-map-left-win-on" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="247.5px" height="184.773px" viewBox="0 0 247.5 184.773" enable-background="new 0 0 247.5 184.773" xml:space="preserve">
-<g>
+<g class="3floor">
 	<rect x="0.25" y="0.25" fill="#35614A" width="180.25" height="47.5"/>
 	<path d="M180.25,0.5v47H0.5v-47H180.25 M180.75,0H0v48h180.75V0L180.75,0z"/>
 	<g>
@@ -471,7 +482,7 @@
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="30.688" x2="142.25" y2="30.688"/>
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="28.75" y1="18.75" x2="180.75" y2="18.75"/>
 </g>
-<g>
+<g class="2floor">
 	<polygon fill="#35614A" points="0.25,98.75 0.25,50.25 218.09,50.25 228.743,57.499 247.25,80.65 247.25,98.75 	"/>
 	<path d="M218.014,50.5l10.526,7.163L247,80.738V98.5h-66.25H0.5v-48h180.25H218.014 M218.167,50H180.75H0v49h180.75h66.75V80.563
 		l-18.616-23.271L218.167,50L218.167,50z"/>
@@ -547,84 +558,7 @@
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="28.5" y1="68.75" x2="180.75" y2="68.75"/>
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="71.5" x2="180.75" y2="79"/>
 </g>
-<g>
-	<polygon fill="#35614A" points="0.25,149.023 0.25,101.023 218.727,101.023 228.743,107.84 247.25,130.991 247.25,149.023 	"/>
-	<path d="M218.648,101.273l9.892,6.729L247,131.079v17.694h-66.25H0.5v-47.5h180.25H218.648 M218.803,100.773H180.75H0v48.5h180.75
-		h66.75v-18.37l-18.616-23.271L218.803,100.773L218.803,100.773z"/>
-</g>
-<g>
-	<polygon fill="#79C498" points="181,149.023 181,101.023 218.727,101.023 228.743,107.84 247.25,130.991 247.25,149.023 	"/>
-	<path d="M218.648,101.273l9.892,6.729L247,131.079v17.694h-65.75v-47.5H218.648 M218.803,100.773H180.75v48.5h66.75v-18.37
-		l-18.616-23.271L218.803,100.773L218.803,100.773z"/>
-</g>
-<g>
-	<rect x="95.167" y="131.357" fill="#79C498" width="18.583" height="17.666"/>
-	<path d="M113.5,131.607v17.166H95.417v-17.166H113.5 M114,131.107H94.917v18.166H114V131.107L114,131.107z"/>
-</g>
-<g>
-	<rect x="66.996" y="131.357" fill="#79C498" width="27.671" height="17.666"/>
-	<path d="M94.417,131.607v17.166H67.246v-17.166H94.417 M94.917,131.107H66.746v18.166h28.171V131.107L94.917,131.107z"/>
-</g>
-<g>
-	<rect x="47.748" y="131.357" fill="#79C498" width="18.748" height="17.666"/>
-	<path d="M66.246,131.607v17.166H47.998v-17.166H66.246 M66.746,131.107H47.498v18.166h19.248V131.107L66.746,131.107z"/>
-</g>
-<g>
-	<rect x="142.5" y="131.357" fill="#79C498" width="18.75" height="17.666"/>
-	<path d="M161,131.607v17.166h-18.25v-17.166H161 M161.5,131.107h-19.25v18.166h19.25V131.107L161.5,131.107z"/>
-</g>
-<g>
-	<rect x="171.375" y="131.357" fill="#79C498" width="9.125" height="17.666"/>
-	<path d="M180.25,131.607v17.166h-8.625v-17.166H180.25 M180.75,131.107h-9.625v18.166h9.625V131.107L180.75,131.107z"/>
-</g>
-<g>
-	<rect x="114.25" y="131.357" fill="#79C498" width="13.625" height="17.666"/>
-	<path d="M127.625,131.607v17.166H114.5v-17.166H127.625 M128.125,131.107H114v18.166h14.125V131.107L128.125,131.107z"/>
-</g>
-<g>
-	<rect x="128.375" y="131.357" fill="#79C498" width="13.625" height="17.666"/>
-	<path d="M141.75,131.607v17.166h-13.125v-17.166H141.75 M142.25,131.107h-14.125v18.166h14.125V131.107L142.25,131.107z"/>
-</g>
-<g>
-	<rect x="19.125" y="131.357" fill="#79C498" width="28.123" height="17.666"/>
-	<path d="M46.998,131.607v17.166H19.375v-17.166H46.998 M47.498,131.107H18.875v18.166h28.623V131.107L47.498,131.107z"/>
-</g>
-<g>
-	<rect x="0.25" y="131.357" fill="#79C498" width="18.375" height="17.666"/>
-	<path d="M18.375,131.607v17.166H0.5v-17.166H18.375 M18.875,131.107H0v18.166h18.875V131.107L18.875,131.107z"/>
-</g>
-<g>
-	<rect x="85.75" y="101.023" fill="#79C498" width="28" height="17.74"/>
-	<path d="M113.5,101.273v17.24H86v-17.24H113.5 M114,100.773H85.5v18.24H114V100.773L114,100.773z"/>
-</g>
-<g>
-	<rect x="142.5" y="101.023" fill="#79C498" width="18.75" height="17.74"/>
-	<path d="M161,101.273v17.24h-18.25v-17.24H161 M161.5,100.773h-19.25v18.24h19.25V100.773L161.5,100.773z"/>
-</g>
-<g>
-	<rect x="114.25" y="101.023" fill="#79C498" width="27.75" height="17.74"/>
-	<path d="M141.75,101.273v17.24h-13.625H114.5v-17.24h13.625H141.75 M142.25,100.773h-14.125H114v18.24h14.125h14.125V100.773
-		L142.25,100.773z"/>
-</g>
-<g>
-	<rect x="0.25" y="101.023" fill="#79C498" width="27.75" height="17.74"/>
-	<path d="M27.75,101.273v17.24H9.5h-9v-17.24h9H27.75 M28.25,100.773H9.5H0v18.24h9.5h18.75V100.773L28.25,100.773z"/>
-</g>
-<g>
-	<rect x="28.5" y="101.023" fill="#79C498" width="37.996" height="17.74"/>
-	<path d="M66.246,101.273v17.24H56.75h-28v-17.24h28H66.246 M66.746,100.773H56.75h-28.5v18.24h28.5h9.996V100.773L66.746,100.773z"
-		/>
-</g>
-<g>
-	<rect x="66.996" y="101.023" fill="#79C498" width="18.254" height="17.74"/>
-	<path d="M85,101.273v17.24H67.246v-17.24H85 M85.5,100.773H66.746v18.24H85.5V100.773L85.5,100.773z"/>
-</g>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.5" y1="131.625" x2="161.5" y2="148.75"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="171.125" y1="135.166" x2="171.125" y2="143.666"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="119.014" x2="161.5" y2="119.014"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="131.107" x2="142.25" y2="131.107"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="119.014" x2="180.75" y2="131.107"/>
-<g>
+<g class="1floor">
 	<g>
 		<polygon fill="#35614A" points="181,184.523 181,169.941 0.25,169.941 0.25,151.523 247.25,151.523 247.25,184.523 		"/>
 		<path d="M247,151.773v32.5h-65.75v-14.082v-0.5h-0.5H0.5v-17.918h180.25H247 M247.5,151.273h-66.75H0v18.918h180.75v14.582h66.75
@@ -661,14 +595,93 @@
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="173.25" x2="180.75" y2="181.25"/>
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="154.127" x2="0" y2="163.135"/>
 </g>
-<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.25" y1="101.023" x2="180.75" y2="101.023"/>
-        </svg>
-        
-        
-
-
+<g class="B1floor">
+	<g>
+		<polygon fill="#35614A" points="0.25,149.023 0.25,101.023 218.727,101.023 228.743,107.84 247.25,130.991 247.25,149.023 		"/>
+		<path d="M218.648,101.273l9.892,6.729L247,131.079v17.694h-66.25H0.5v-47.5h180.25H218.648 M218.803,100.773H180.75H0v48.5h180.75
+			h66.75v-18.37l-18.616-23.271L218.803,100.773L218.803,100.773z"/>
+	</g>
+	<g>
+		<polygon fill="#79C498" points="181,149.023 181,101.023 218.727,101.023 228.743,107.84 247.25,130.991 247.25,149.023 		"/>
+		<path d="M218.648,101.273l9.892,6.729L247,131.079v17.694h-65.75v-47.5H218.648 M218.803,100.773H180.75v48.5h66.75v-18.37
+			l-18.616-23.271L218.803,100.773L218.803,100.773z"/>
+	</g>
+	<g>
+		<rect x="95.167" y="131.357" fill="#79C498" width="18.583" height="17.666"/>
+		<path d="M113.5,131.607v17.166H95.417v-17.166H113.5 M114,131.107H94.917v18.166H114V131.107L114,131.107z"/>
+	</g>
+	<g>
+		<rect x="66.996" y="131.357" fill="#79C498" width="27.671" height="17.666"/>
+		<path d="M94.417,131.607v17.166H67.246v-17.166H94.417 M94.917,131.107H66.746v18.166h28.171V131.107L94.917,131.107z"/>
+	</g>
+	<g>
+		<rect x="47.748" y="131.357" fill="#79C498" width="18.748" height="17.666"/>
+		<path d="M66.246,131.607v17.166H47.998v-17.166H66.246 M66.746,131.107H47.498v18.166h19.248V131.107L66.746,131.107z"/>
+	</g>
+	<g>
+		<rect x="142.5" y="131.357" fill="#79C498" width="18.75" height="17.666"/>
+		<path d="M161,131.607v17.166h-18.25v-17.166H161 M161.5,131.107h-19.25v18.166h19.25V131.107L161.5,131.107z"/>
+	</g>
+	<g>
+		<rect x="171.375" y="131.357" fill="#79C498" width="9.125" height="17.666"/>
+		<path d="M180.25,131.607v17.166h-8.625v-17.166H180.25 M180.75,131.107h-9.625v18.166h9.625V131.107L180.75,131.107z"/>
+	</g>
+	<g>
+		<rect x="114.25" y="131.357" fill="#79C498" width="13.625" height="17.666"/>
+		<path d="M127.625,131.607v17.166H114.5v-17.166H127.625 M128.125,131.107H114v18.166h14.125V131.107L128.125,131.107z"/>
+	</g>
+	<g>
+		<rect x="128.375" y="131.357" fill="#79C498" width="13.625" height="17.666"/>
+		<path d="M141.75,131.607v17.166h-13.125v-17.166H141.75 M142.25,131.107h-14.125v18.166h14.125V131.107L142.25,131.107z"/>
+	</g>
+	<g>
+		<rect x="19.125" y="131.357" fill="#79C498" width="28.123" height="17.666"/>
+		<path d="M46.998,131.607v17.166H19.375v-17.166H46.998 M47.498,131.107H18.875v18.166h28.623V131.107L47.498,131.107z"/>
+	</g>
+	<g>
+		<rect x="0.25" y="131.357" fill="#79C498" width="18.375" height="17.666"/>
+		<path d="M18.375,131.607v17.166H0.5v-17.166H18.375 M18.875,131.107H0v18.166h18.875V131.107L18.875,131.107z"/>
+	</g>
+	<g>
+		<rect x="85.75" y="101.023" fill="#79C498" width="28" height="17.74"/>
+		<path d="M113.5,101.273v17.24H86v-17.24H113.5 M114,100.773H85.5v18.24H114V100.773L114,100.773z"/>
+	</g>
+	<g>
+		<rect x="142.5" y="101.023" fill="#79C498" width="18.75" height="17.74"/>
+		<path d="M161,101.273v17.24h-18.25v-17.24H161 M161.5,100.773h-19.25v18.24h19.25V100.773L161.5,100.773z"/>
+	</g>
+	<g>
+		<rect x="114.25" y="101.023" fill="#79C498" width="27.75" height="17.74"/>
+		<path d="M141.75,101.273v17.24h-13.625H114.5v-17.24h13.625H141.75 M142.25,100.773h-14.125H114v18.24h14.125h14.125V100.773
+			L142.25,100.773z"/>
+	</g>
+	<g>
+		<rect x="0.25" y="101.023" fill="#79C498" width="27.75" height="17.74"/>
+		<path d="M27.75,101.273v17.24H9.5h-9v-17.24h9H27.75 M28.25,100.773H9.5H0v18.24h9.5h18.75V100.773L28.25,100.773z"/>
+	</g>
+	<g>
+		<rect x="28.5" y="101.023" fill="#79C498" width="37.996" height="17.74"/>
+		<path d="M66.246,101.273v17.24H56.75h-28v-17.24h28H66.246 M66.746,100.773H56.75h-28.5v18.24h28.5h9.996V100.773L66.746,100.773z
+			"/>
+	</g>
+	<g>
+		<rect x="66.996" y="101.023" fill="#79C498" width="18.254" height="17.74"/>
+		<path d="M85,101.273v17.24H67.246v-17.24H85 M85.5,100.773H66.746v18.24H85.5V100.773L85.5,100.773z"/>
+	</g>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.5" y1="131.625" x2="161.5" y2="148.75"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="171.125" y1="135.166" x2="171.125" y2="143.666"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="119.014" x2="161.5" y2="119.014"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="131.107" x2="142.25" y2="131.107"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="119.014" x2="180.75" y2="131.107"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.25" y1="101.023" x2="180.75" y2="101.023"/>
+</g>
+</svg>
 
     </div>
+	<script src="vh.js"></script>
     <script src="menu.js"></script>
     <script src="leftWindowButton.js"></script>
 </body>
