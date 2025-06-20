@@ -13,6 +13,86 @@
     user-select:none;
   }
 
+#map{
+  height: calc(var(--vh, 1vh) * 100);
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+}
+#scale-menu{
+  display: flex;
+  
+  padding: 0;
+
+
+  position: absolute;
+  left: 95.6vw;
+  top: 4.5vh;
+
+  z-index: 100;
+}
+#scale-menu>li{
+  list-style: none;
+}
+#scale-menu>li>button{
+  width: 2vw;
+  height: calc(var(--vh, 1vh) * 3);
+  line-height: calc(var(--vh, 1vh) * 3);
+  text-align: center;
+  margin-right: 0.2vw;
+  overflow: hidden;
+  font-size: 2vh;
+}
+#map-menu{
+  display: flex;
+  
+  padding: 0;
+
+  position: absolute;
+  left: 89vw;
+  top: 1vh;
+  z-index: 100;
+}
+
+#map-menu>li{
+  list-style: none;
+  
+}
+#map-menu>li>button{
+  width: 2vw;
+  height: calc(var(--vh, 1vh) * 3);
+  line-height: calc(var(--vh, 1vh) * 3);
+  text-align: center;
+  margin-right: 0.2vw;
+  overflow: hidden;
+  font-size: 2vh;
+  
+}
+#menu {
+  width: 30vw;
+}
+
+#menu > ul {
+  display: flex;
+  
+  padding: 0;
+}
+
+#menu > ul > li {
+  list-style: none;
+  width: 15vw;
+  height: calc(var(--vh, 1vh) * 10);
+  line-height: calc(var(--vh, 1vh) * 10);
+  text-align: center;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+#menu>ul>.off:hover{
+  background-color: darkgray;
+  
+}
+
 #left-window {
     background-color: white;
     height: calc(var(--vh, 1vh) * 100);
@@ -23,12 +103,7 @@
     overflow: hidden;
     font-size: 4vh;
   }
-#map{
-  height: calc(var(--vh, 1vh) * 100);
-  object-fit: contain;
-  position: absolute;
-  top: 0;
-}
+
 #icons{
   pointer-events:none;
   height: calc(var(--vh, 1vh) * 100);
@@ -71,29 +146,9 @@
   left: 0vw;
 }
 
-#menu {
-  width: 30vw;
-}
 
-#menu > ul {
-  display: flex;
-  
-  padding: 0;
-}
 
-#menu > ul > li {
-  list-style: none;
-  width: 15vw;
-  height: calc(var(--vh, 1vh) * 10);
-  line-height: 10vh;
-  text-align: center;
-  margin-right: 5px;
-  overflow: hidden;
-}
-#menu>ul>.off:hover{
-    background-color: darkgray;
-    
-}
+
 #left-window-button:hover{
     background-color: darkgray;
 }
@@ -126,6 +181,5 @@ table, th, td {
     width: 30vw;
     height: calc(var(--vh, 1vh) * 90);
 }
-
 
 

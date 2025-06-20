@@ -10,15 +10,18 @@
 <body>
     
     <div id="wrap">
-		<div id="map-menu">
-            <ul>
-                <li id="map-menu-B1" role="tab">B1</li>
-                <li id="map-menu-1floor" role="tab">1</li>
-				<li id="map-menu-2floor" role="tab">2</li>
-				<li id="map-menu-3floor" role="tab">3</li>
-				<li id="map-menu-all" role="tab">all</li>
-            </ul>
-        </div>
+	
+        <ul id="map-menu">
+            <li id="map-menu-B1"><button>B1</button></li>
+            <li id="map-menu-1floor"><button>1</button></li>
+			<li id="map-menu-2floor"><button>2</button></li>
+			<li id="map-menu-3floor"><button>3</button></li>
+			<li id="map-menu-all"><button>all</button></li>
+        </ul>
+        <ul id="scale-menu">
+            <li id="pulse"><button>+</button></li>
+            <li id="minus"><button>-</button></li>
+        </ul>
 
         <div id="left-window" class="">
             <div id="menu">
@@ -418,7 +421,7 @@
 
 <svg id="map" class="icons-and-map-left-win-on" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="247.5px" height="184.773px" viewBox="0 0 247.5 184.773" enable-background="new 0 0 247.5 184.773" xml:space="preserve">
-<g class="3floor">
+<g>
 	<rect x="0.25" y="0.25" fill="#35614A" width="180.25" height="47.5"/>
 	<path d="M180.25,0.5v47H0.5v-47H180.25 M180.75,0H0v48h180.75V0L180.75,0z"/>
 	<g>
@@ -482,7 +485,7 @@
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="30.688" x2="142.25" y2="30.688"/>
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="28.75" y1="18.75" x2="180.75" y2="18.75"/>
 </g>
-<g class="2floor">
+<g>
 	<polygon fill="#35614A" points="0.25,98.75 0.25,50.25 218.09,50.25 228.743,57.499 247.25,80.65 247.25,98.75 	"/>
 	<path d="M218.014,50.5l10.526,7.163L247,80.738V98.5h-66.25H0.5v-48h180.25H218.014 M218.167,50H180.75H0v49h180.75h66.75V80.563
 		l-18.616-23.271L218.167,50L218.167,50z"/>
@@ -558,44 +561,7 @@
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="28.5" y1="68.75" x2="180.75" y2="68.75"/>
 	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="71.5" x2="180.75" y2="79"/>
 </g>
-<g class="1floor">
-	<g>
-		<polygon fill="#35614A" points="181,184.523 181,169.941 0.25,169.941 0.25,151.523 247.25,151.523 247.25,184.523 		"/>
-		<path d="M247,151.773v32.5h-65.75v-14.082v-0.5h-0.5H0.5v-17.918h180.25H247 M247.5,151.273h-66.75H0v18.918h180.75v14.582h66.75
-			V151.273L247.5,151.273z"/>
-	</g>
-	<g>
-		<rect x="181" y="151.523" fill="#79C498" width="28.5" height="33"/>
-		<path d="M209.25,151.773v32.5h-28v-32.5H209.25 M209.75,151.273h-29v33.5h29V151.273L209.75,151.273z"/>
-	</g>
-	<g>
-		<rect x="210" y="151.523" fill="#79C498" width="37.25" height="33"/>
-		<path d="M247,151.773v32.5h-36.75v-32.5H247 M247.5,151.273h-37.75v33.5h37.75V151.273L247.5,151.273z"/>
-	</g>
-	<g>
-		<rect x="0.25" y="151.523" fill="#79C498" width="18.375" height="18.418"/>
-		<path d="M18.375,151.773v17.918H0.5v-17.918H18.375 M18.875,151.273H0v18.918h18.875V151.273L18.875,151.273z"/>
-	</g>
-	<g>
-		<rect x="142.5" y="151.523" fill="#79C498" width="18.75" height="18.418"/>
-		<path d="M161,151.773v17.918h-18.25v-17.918H161 M161.5,151.273h-19.25v18.918h19.25V151.273L161.5,151.273z"/>
-	</g>
-	<g>
-		<rect x="171.375" y="156.333" fill="#79C498" width="9.125" height="13.608"/>
-		<path d="M180.25,156.583v13.108h-8.625v-13.108H180.25 M180.75,156.083h-9.625v14.108h9.625V156.083L180.75,156.083z"/>
-	</g>
-	<g>
-		<rect x="19.125" y="151.523" fill="#1B4433" width="122.875" height="18.418"/>
-		<path d="M141.75,151.773v17.918H19.375v-17.918H141.75 M142.25,151.273H18.875v18.918H142.25V151.273L142.25,151.273z"/>
-	</g>
-	
-		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="171.125" y1="157.791" x2="171.125" y2="166.291"/>
-	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.5" y1="152.17" x2="161.5" y2="169.295"/>
-	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="152.17" x2="180.75" y2="156.083"/>
-	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="173.25" x2="180.75" y2="181.25"/>
-	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="154.127" x2="0" y2="163.135"/>
-</g>
-<g class="B1floor">
+<g>
 	<g>
 		<polygon fill="#35614A" points="0.25,149.023 0.25,101.023 218.727,101.023 228.743,107.84 247.25,130.991 247.25,149.023 		"/>
 		<path d="M218.648,101.273l9.892,6.729L247,131.079v17.694h-66.25H0.5v-47.5h180.25H218.648 M218.803,100.773H180.75H0v48.5h180.75
@@ -678,7 +644,47 @@
 	
 		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.25" y1="101.023" x2="180.75" y2="101.023"/>
 </g>
+<g>
+	<g>
+		<polygon fill="#35614A" points="181,184.523 181,169.941 0.25,169.941 0.25,151.523 247.25,151.523 247.25,184.523 		"/>
+		<path d="M247,151.773v32.5h-65.75v-14.082v-0.5h-0.5H0.5v-17.918h180.25H247 M247.5,151.273h-66.75H0v18.918h180.75v14.582h66.75
+			V151.273L247.5,151.273z"/>
+	</g>
+	<g>
+		<rect x="181" y="151.523" fill="#79C498" width="28.5" height="33"/>
+		<path d="M209.25,151.773v32.5h-28v-32.5H209.25 M209.75,151.273h-29v33.5h29V151.273L209.75,151.273z"/>
+	</g>
+	<g>
+		<rect x="210" y="151.523" fill="#79C498" width="37.25" height="33"/>
+		<path d="M247,151.773v32.5h-36.75v-32.5H247 M247.5,151.273h-37.75v33.5h37.75V151.273L247.5,151.273z"/>
+	</g>
+	<g>
+		<rect x="0.25" y="151.523" fill="#79C498" width="18.375" height="18.418"/>
+		<path d="M18.375,151.773v17.918H0.5v-17.918H18.375 M18.875,151.273H0v18.918h18.875V151.273L18.875,151.273z"/>
+	</g>
+	<g>
+		<rect x="142.5" y="151.523" fill="#79C498" width="18.75" height="18.418"/>
+		<path d="M161,151.773v17.918h-18.25v-17.918H161 M161.5,151.273h-19.25v18.918h19.25V151.273L161.5,151.273z"/>
+	</g>
+	<g>
+		<rect x="171.375" y="156.333" fill="#79C498" width="9.125" height="13.608"/>
+		<path d="M180.25,156.583v13.108h-8.625v-13.108H180.25 M180.75,156.083h-9.625v14.108h9.625V156.083L180.75,156.083z"/>
+	</g>
+	<g>
+		<rect x="19.125" y="151.523" fill="#1B4433" width="122.875" height="18.418"/>
+		<path d="M141.75,151.773v17.918H19.375v-17.918H141.75 M142.25,151.273H18.875v18.918H142.25V151.273L142.25,151.273z"/>
+	</g>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="171.125" y1="157.791" x2="171.125" y2="166.291"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="161.5" y1="152.17" x2="161.5" y2="169.295"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="152.17" x2="180.75" y2="156.083"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="180.75" y1="173.25" x2="180.75" y2="181.25"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="0" y1="154.127" x2="0" y2="163.135"/>
+	
+		<line fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="163.917" y1="170.191" x2="169.417" y2="170.191"/>
+</g>
 </svg>
+
 
     </div>
 	<script src="vh.js"></script>
