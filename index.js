@@ -5,7 +5,8 @@ import express from 'express';
 import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
 // import { dirname } from 'path';
-import path from 'path'
+import path from 'path';
+import https from 'https';
 
 
 function getToday(){
@@ -67,4 +68,15 @@ app.get('/',async (req, res)=>{
 
 app.listen(3000, () => {
     console.log('Server is running');
+});
+
+
+const options = {
+        key: fs.readFileSync('etc/letsencrpt/live/web309.duckdns.org/privkey.pe'),
+        cert: fs.readFileSync('etc/letsencrpt/live/web309.duckdns.org/fullchain')
+
+};
+https.createServer(options, app).listen(3030, ()=>{
+        console.log('Server is running');
+
 });
