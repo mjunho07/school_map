@@ -67,7 +67,7 @@ app.get('/',async (req, res)=>{
 })
 
 app.listen(3000, () => {
-    console.log('Server is running');
+    console.log('Server is running 80');
 });
 
 
@@ -77,6 +77,6 @@ const options = {
 
 };
 https.createServer(options, app).listen(3030, ()=>{
-        console.log('Server is running');
+        console.log('Server is running 443');
 
 });
