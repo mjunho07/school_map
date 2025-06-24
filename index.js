@@ -72,8 +72,8 @@ app.listen(3000, () => {
 
 
 const options = {
-        key: fs.readFileSync('etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
-        cert: fs.readFileSync('etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
+        key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
 
 };
 https.createServer(options, app).listen(3030, ()=>{
