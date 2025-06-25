@@ -3,6 +3,7 @@ const leftWindow = document.querySelector('#left-window');
 const icons = document.querySelector('#icons');
 const map = document.querySelector('#map');
 
+
 leftWindowButton.addEventListener('click', () => {
     //버튼 클릭했을 때 left window가 닫혀있는 상태
     if(leftWindow.classList.contains('hidden'))
@@ -18,6 +19,8 @@ leftWindowButton.addEventListener('click', () => {
 
         map.classList.remove('icons-and-map-left-win-off');
         map.classList.add('icons-and-map-left-win-on');
+
+
     }
     else{
         leftWindow.classList.add('hidden');
