@@ -184,11 +184,18 @@ table, th, td {
 
 
 #pop-up{
-  width: 30vw;
-  height: calc(var(--vh, 1vh) * 90);
+  width: 29vw;
+  height: calc(var(--vh, 1vh) * 80);
+  background-color: rgb(171, 171, 171);
+  position: relative;
+  margin-top: calc(var(--vh, 1vh) * 2);
+  margin-left: 0.5vw;
 }
 
 #pop-up-button{
+  width: 2vw;
+  height: calc(var(--vh, 1vh) * 5);
+  font-size: calc(var(--vh, 1vh) * 4);
   position: absolute;
   top: 0;
   right: 0;

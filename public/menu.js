@@ -27,3 +27,10 @@ timeMenu.addEventListener("click", () => {
         searchWindow.classList.add('hidden');
     }
 });
+
+
+const test = document.querySelectorAll(".selectable");
+test.forEach(function (item){
+    item.setAttribute('fill','#ffffff');
+
+});
