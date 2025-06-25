@@ -30,11 +30,11 @@ mapMenuB1FloorButton.addEventListener("click", ()=>{
 
 mapMenuFirstFloorButton.addEventListener("click", ()=>{
     B1floor.forEach(function (item){
-        item.classList.remove('hidden');
+        item.classList.add('hidden');
 
     });
     firstFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
     secondFloor.forEach(function (item){
@@ -50,7 +50,7 @@ mapMenuFirstFloorButton.addEventListener("click", ()=>{
 
 mapMenuSecondFloorButton.addEventListener("click", ()=>{
     B1floor.forEach(function (item){
-        item.classList.remove('hidden');
+        item.classList.add('hidden');
 
     });
     firstFloor.forEach(function (item){
@@ -58,7 +58,7 @@ mapMenuSecondFloorButton.addEventListener("click", ()=>{
 
     });
     secondFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
     thirdFloor.forEach(function (item){
@@ -70,7 +70,7 @@ mapMenuSecondFloorButton.addEventListener("click", ()=>{
 
 mapMenuThirdFloorButton.addEventListener("click", ()=>{
     B1floor.forEach(function (item){
-        item.classList.remove('hidden');
+        item.classList.add('hidden');
 
     });
     firstFloor.forEach(function (item){
@@ -82,7 +82,7 @@ mapMenuThirdFloorButton.addEventListener("click", ()=>{
 
     });
     thirdFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
 
@@ -94,15 +94,15 @@ mapMenuAllFloorButton.addEventListener("click", ()=>{
 
     });
     firstFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
     secondFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
     thirdFloor.forEach(function (item){
-        item.classList.add('hidden');
+        item.classList.remove('hidden');
 
     });
 
