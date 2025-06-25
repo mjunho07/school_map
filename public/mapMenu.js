@@ -4,12 +4,14 @@ const mapMenuSecondFloorButton = document.querySelector ("#map-menu-2floor");
 const mapMenuThirdFloorButton = document.querySelector ("#map-menu-3floor");
 const mapMenuAllFloorButton = document.querySelector ("#map-menu-ALL");
 
-const B1floor = document.querySelectorAll(".B1floor");
-const firstFloor = document.querySelectorAll(".1floor");
-const secondFloor = document.querySelectorAll(".2floor");
-const thirdFloor = document.querySelectorAll(".3floor");
+const B1floor = document.querySelectorAll(".B1-floor");
+const firstFloor = document.querySelectorAll(".first-floor");
+const secondFloor = document.querySelectorAll(".second-floor");
+const thirdFloor = document.querySelectorAll(".third-floor");
 
-mapMenuB1FloorButton.addEventListener("click", ()=>{
+
+
+mapMenuB1FloorButton.addEventListener('click', ()=>{
     B1floor.forEach(function (item){
         item.classList.remove('hidden');
 
@@ -107,4 +109,3 @@ mapMenuAllFloorButton.addEventListener("click", ()=>{
     });
 
 });
-

@@ -183,3 +183,13 @@ table, th, td {
 }
 
 
+#pop-up{
+  width: 30vw;
+  height: calc(var(--vh, 1vh) * 90);
+}
+
+#pop-up-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
