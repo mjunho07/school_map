@@ -29,8 +29,3 @@ timeMenu.addEventListener("click", () => {
 });
 
 
-const test = document.querySelectorAll(".selectable");
-test.forEach(function (item){
-    item.setAttribute('fill','#ffffff');
-
-});
