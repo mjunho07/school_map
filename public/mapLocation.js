@@ -8,18 +8,24 @@ const libraryOrMultipurposeHall = document.querySelectorAll(".library-or-multipu
 
 let clickings = null;
 
-
+let clicking = null;
 
 
 
 selectable.forEach((item)=>{
     item.addEventListener("click",()=>{
-        if(clickings != null){
+
+        if(clickings != null && clickings[0].id == "etc"){
+            clickings.forEach((clicking)=>{
+                clicking.setAttribute('fill','#1B4433');
+            });
+        }
+        else if(clickings != null){
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#79C498')
             });
         }
-
+        
         if(item.id ==  "3floor-stairs1" || item.id == "2floor-stairs1" || item.id == "1floor-stairs1" || item.id == "B1floor-stairs1"){
             clickings = stairs1;
         }
@@ -36,9 +42,22 @@ selectable.forEach((item)=>{
             clickings = [item];
         }
         
-        clickings.forEach((clicking)=>{
-            clicking.setAttribute('fill','#99E4B8');
-        });
+        if(item.id == "etc")
+        {
+            clickings.forEach((clicking)=>{
+                clicking.setAttribute('fill','#2B5443')
+            });
+        }
+        else{
+            clickings.forEach((clicking)=>{
+                clicking.setAttribute('fill','#99E4B8');
+                
+            });
+        }
+
+        clicking = item.id;
+        console.log(clicking);
+        
     });
     
 
