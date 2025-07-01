@@ -55,8 +55,7 @@ selectable.forEach((item)=>{
             });
         }
 
-        clicking = item.id;
-        console.log(clicking);
+        
         
     });
     
