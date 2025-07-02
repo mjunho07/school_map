@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import https from 'https';
 import fs from 'fs';
-import pool from './database/mariadb';
+import pool from './database/mariadb.js';
 import { Console } from 'console';
 
 
