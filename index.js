@@ -16,6 +16,25 @@ const rows = await conn.query("SELECT * FROM locations");  // 모든 상품 데�
 conn.release();
 console.log(rows);
 
+const app = express();
+
+const __dirname = path.resolve();
+
+// body parser set
+app.use(bodyParser.urlencoded({ extended: false })); // express 기본 모듈 사용
+app.use(bodyParser.json());
+
+app.use(express.static('public'));
+
+
+// view engine set
+app.set('view engine', 'html'); // main.html -> main(.html)
+
+// nunjucks
+nunjucks.configure('views', {
+    watch: true, // html 파일이 수정될 경우, 다시 반영 후 렌더링
+    express: app
+})
 
 
 function getToday(){
@@ -45,25 +64,6 @@ async function api() {
     
 }
 
-const app = express();
-
-const __dirname = path.resolve();
-
-// body parser set
-app.use(bodyParser.urlencoded({ extended: false })); // express 기본 모듈 사용
-app.use(bodyParser.json());
-
-app.use(express.static('public'));
-
-
-// view engine set
-app.set('view engine', 'html'); // main.html -> main(.html)
-
-// nunjucks
-nunjucks.configure('views', {
-    watch: true, // html 파일이 수정될 경우, 다시 반영 후 렌더링
-    express: app
-})
 
 
 
