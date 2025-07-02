@@ -4,10 +4,19 @@
 import express from 'express';
 import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
-// import { dirname } from 'path';
 import path from 'path';
 import https from 'https';
 import fs from 'fs';
+import pool from './database/mariadb';
+import { Console } from 'console';
+
+
+const conn = await pool.getConnection();
+const rows = await conn.query("SELECT * FROM locations");  // 모든 상품 데이터 조회
+conn.release();
+console.log(rows);
+
+
 
 function getToday(){
     const date = new Date();
@@ -70,12 +79,12 @@ app.listen(3000, () => {
 
 
 
-const options = {
-        key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
+// const options = {
+//         key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
+//         cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
 
-};
-https.createServer(options, app).listen(3030, ()=>{
-        console.log('Server is running 443');
+// };
+// https.createServer(options, app).listen(3030, ()=>{
+//         console.log('Server is running 443');
 
-});
+// });

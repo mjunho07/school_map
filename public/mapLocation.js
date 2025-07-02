@@ -15,6 +15,9 @@ let clicking = null;
 selectable.forEach((item)=>{
     item.addEventListener("click",()=>{
 
+        clicking = item.id;
+        console.log(clicking);
+
         if(clickings != null && clickings[0].id == "etc"){
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#1B4433');
