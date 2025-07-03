@@ -28,10 +28,10 @@ selectable.forEach((item)=>{
 	    	},
 		    body: JSON.stringify({id:clickingId})
 	    });
-
+        //promiss 있는  
         fetchLocationDetail = await res.json();
-        popUpTitle.innerText = await fetchLocationDetail[0].location_name;
-        popUpDetail.innerText = await fetchLocationDetail[0].detail;
+        popUpTitle.innerText = fetchLocationDetail[0].location_name;
+        popUpDetail.innerText = fetchLocationDetail[0].detail;
 
         popUp.classList.remove('hidden');
 

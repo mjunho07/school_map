@@ -66,7 +66,6 @@ app.post('/search-location-click', async (req, res)=>{
 
     const conn = await pool.getConnection();
     const rows = await conn.query(`SELECT location_name,detail FROM locations WHERE id = '${clickedId}'`);
-    console.log(rows);
     res.json(rows);
     conn.release();
 });
