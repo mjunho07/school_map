@@ -195,8 +195,20 @@ table, th, td {
 #pop-up-button{
   width: 2vw;
   height: calc(var(--vh, 1vh) * 5);
-  font-size: calc(var(--vh, 1vh) * 4);
+  font-size: 2vw;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+#pop-up-title{
+  position: absolute;
+  top: calc(var(--vh, 1vh) * 1);
+  left: 1vw;
+}
+
+#pop-up-detail{
+  position: absolute;
+  top: calc(var(--vh, 1vh) * 10);
+  left: 1vw;
 }

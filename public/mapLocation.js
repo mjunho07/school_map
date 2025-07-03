@@ -5,18 +5,34 @@ const stairs2 = document.querySelectorAll(".stairs2");
 const ev = document.querySelectorAll(".ev")
 const libraryOrMultipurposeHall = document.querySelectorAll(".library-or-multipurpose-hall");
 
+const pupUpButton = document.querySelector('#pop-up-button');
+const popUp = document.querySelector('#pop-up');
+const popUpTitle = document.querySelector('#pop-up-title');
+const popUpDetail = document.querySelector('#pop-up-detail');
 
 let clickings = null;
 
-let clicking = null;
+let clickingId = null;
+
 
 
 
 selectable.forEach((item)=>{
     item.addEventListener("click",()=>{
+        clickingId = item.id;
 
-        clicking = item.id;
-        console.log(clicking);
+        const fetchLocationDetail = fetch('/search-location-click', {
+		    method: 'POST',
+		    headers: {
+		    	'Content-Type': 'application/json'
+	    	},
+		    body: JSON.stringify({id:clickingId})
+	    }).then(res=>res.json());
+
+        // popUpTitle.innerText = fetchLocationDetail.;
+        // popUpDetail.innerText = fetchLocationDetail.;
+
+        popUp.classList.remove('hidden');
 
         if(clickings != null && clickings[0].id == "etc"){
             clickings.forEach((clicking)=>{
@@ -54,13 +70,20 @@ selectable.forEach((item)=>{
         else{
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#99E4B8');
-                
             });
         }
-
-        
-        
     });
-    
-
 });
+
+pupUpButton.addEventListener('click',()=>{
+    popUp.classList.add('hidden');
+
+    clickings.forEach((clicking)=>{
+        clicking.setAttribute('fill','#79C498');
+    });
+
+    clickings = null;
+    clickingId = null;
+});
+
+	

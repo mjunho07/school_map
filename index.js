@@ -10,11 +10,7 @@ import fs from 'fs';
 import pool from './database/mariadb.js';
 
 
-const conn = await pool.getConnection();
-const rows = await conn.query("SELECT * FROM locations");  // 모든 상품 데이터 조회
-const rows2 = await rows.query("SELECT * FROM locations");
-conn.release();
-console.log(rows2);
+
 
 const app = express();
 
@@ -65,7 +61,15 @@ async function api() {
 }
 
 
+app.post('/search-location-click', async (req, res)=>{
+    const clickedId = req.body.json().id;
 
+    const conn = await pool.getConnection();
+    const rows = await conn.query(`SELECT location_name,detail FROM locations WHERE id = '${clickedId}'`);
+    console.log(rows);
+    res.json(rows);
+    conn.release();
+});
 
 app.get('/',async (req, res)=>{
     const resultList = await api();
@@ -79,12 +83,12 @@ app.listen(3000, () => {
 
 
 
-const options = {
-        key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
+// const options = {
+//         key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
+//         cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
 
-};
-https.createServer(options, app).listen(3030, ()=>{
-        console.log('Server is running 443');
+// };
+// https.createServer(options, app).listen(3030, ()=>{
+//         console.log('Server is running 443');
 
-});
+// });

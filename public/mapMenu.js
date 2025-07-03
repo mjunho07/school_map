@@ -11,6 +11,8 @@ const thirdFloor = document.querySelectorAll(".third-floor");
 
 
 
+
+
 mapMenuB1FloorButton.addEventListener('click', ()=>{
     B1Floor.forEach(function (item){
         item.classList.remove('hidden');
@@ -109,3 +111,4 @@ mapMenuAllFloorButton.addEventListener("click", ()=>{
     });
 
 });
+
