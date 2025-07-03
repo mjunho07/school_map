@@ -29,8 +29,8 @@ selectable.forEach((item)=>{
 		    body: JSON.stringify({id:clickingId})
 	    }).then(res=>{
             const fetchLocationDetail = res.json();
-            popUpTitle.innerText = fetchLocationDetail[0].location_name;
-            popUpDetail.innerText = fetchLocationDetail[0].detail;
+            popUpTitle.innerText = fetchLocationDetail[0]["location_name"];
+            popUpDetail.innerText = fetchLocationDetail[0]["detail"];
         });
         
         
