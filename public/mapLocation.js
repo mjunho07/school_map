@@ -29,9 +29,9 @@ selectable.forEach((item)=>{
 		    body: JSON.stringify({id:clickingId})
 	    });
 
-        fetchLocationDetail = res.json();
-        popUpTitle.innerText = fetchLocationDetail[0].location_name;
-        popUpDetail.innerText = fetchLocationDetail[0].detail;
+        fetchLocationDetail = await res.json();
+        popUpTitle.innerText = await fetchLocationDetail[0].location_name;
+        popUpDetail.innerText = await fetchLocationDetail[0].detail;
 
         popUp.classList.remove('hidden');
 
