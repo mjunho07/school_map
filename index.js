@@ -11,10 +11,10 @@ import pool from './database/mariadb.js';
 
 
 const conn = await pool.getConnection();
-console.log(conn);
 const rows = await conn.query("SELECT * FROM locations");  // 모든 상품 데이터 조회
+const rows2 = await rows.query("SELECT * FROM locations");
 conn.release();
-console.log(rows);
+console.log(rows2);
 
 const app = express();
 

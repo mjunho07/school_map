@@ -5,4 +5,4 @@ pupUpButton.addEventListener('click',()=>{
     popUp.classList.add('hidden');
     pupUpButton.classList.add('hidden');
 
-})
+});
