@@ -62,7 +62,7 @@ async function api() {
 
 
 app.post('/search-location-click', async (req, res)=>{
-    const clickedId = req.body.json().id;
+    const clickedId = req.body.id;
 
     const conn = await pool.getConnection();
     const rows = await conn.query(`SELECT location_name,detail FROM locations WHERE id = '${clickedId}'`);
