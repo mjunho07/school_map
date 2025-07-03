@@ -21,7 +21,6 @@ selectable.forEach((item)=>{
     item.addEventListener("click",()=>{
         clickingId = item.id;
 
-        let test;
         fetch('/search-location-click', {
 		    method: 'POST',
 		    headers: {
@@ -30,7 +29,7 @@ selectable.forEach((item)=>{
 		    body: JSON.stringify({id:clickingId})
 	    }).then(res=>{
             const fetchLocationDetail = res.json();
-            test = fetchLocationDetail;
+            console.log(fetchLocationDetail);
             // popUpTitle.innerText = fetchLocationDetail[0]["location_name"];
             // popUpDetail.innerText = fetchLocationDetail[0]["detail"];
         });
