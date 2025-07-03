@@ -27,7 +27,7 @@ selectable.forEach((item)=>{
 		    	'Content-Type': 'application/json'
 	    	},
 		    body: JSON.stringify({id:clickingId})
-	    }).then(res=>res.json());
+	    }).then(res=>console.log(res.json()));
 
         console.log(fetchLocationDetail);
         popUpTitle.innerText = fetchLocationDetail[0].location_name;
