@@ -29,7 +29,7 @@ selectable.forEach((item)=>{
 		    body: JSON.stringify({id:clickingId})
 	    }).then(res=>res.json());
 
-        popUpTitle.innerText = fetchLocationDetail[0].title;
+        popUpTitle.innerText = fetchLocationDetail[0].location_name;
         popUpDetail.innerText = fetchLocationDetail[0].detail;
 
         popUp.classList.remove('hidden');
