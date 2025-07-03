@@ -8,10 +8,10 @@ import path from 'path';
 import https from 'https';
 import fs from 'fs';
 import pool from './database/mariadb.js';
-import { Console } from 'console';
 
 
 const conn = await pool.getConnection();
+console.log(conn);
 const rows = await conn.query("SELECT * FROM locations");  // 모든 상품 데이터 조회
 conn.release();
 console.log(rows);
