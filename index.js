@@ -7,12 +7,12 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import https from 'https';
 import fs from 'fs';
-// import pool from './database/mariadb.js';
+import pool from './database/mariadb.js';
 
 
-// const conn = await pool.getConnection();
-// const locationAllRow = await conn.query('SELECT * FROM locations');
-// conn.release();
+const conn = await pool.getConnection();
+const locationAllRow = await conn.query('SELECT * FROM locations');
+conn.release();
 
 const app = express();
 
@@ -88,12 +88,12 @@ app.listen(3000, () => {
 
 
 
-// const options = {
-//         key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
-//         cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
+const options = {
+        key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
 
-// };
-// https.createServer(options, app).listen(3030, ()=>{
-//         console.log('Server is running 443');
+};
+https.createServer(options, app).listen(3030, ()=>{
+        console.log('Server is running 443');
 
-// });
+});

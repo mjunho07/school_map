@@ -19,30 +19,7 @@ body {
   position: absolute;
   top: 0;
 }
-#scale-menu{
-  display: flex;
-  
-  padding: 0;
 
-
-  position: absolute;
-  left: 92.75vw;
-  top: calc(var(--vh, 1vh) * 7);
-
-  z-index: 100;
-}
-#scale-menu>li{
-  list-style: none;
-}
-#scale-menu>li>button{
-  width: 3vw;
-  height: calc(var(--vh, 1vh) * 5);
-  line-height: calc(var(--vh, 1vh) * 5);
-  text-align: center;
-  margin-right: 0.25vw;
-  overflow: hidden;
-  font-size: 100%;
-}
 #map-menu{
   display: flex;
   
@@ -203,14 +180,14 @@ table, th, td {
 
 #pop-up-title{
   position: absolute;
-  top: calc(var(--vh, 1vh) * 1);
+  top: 0;
   left: 1vw;
-  font-size: calc(var(--vh, 1vh) * 8);
+  font-size: 200%;
 }
 
 #pop-up-detail{
   position: absolute;
-  top: calc(var(--vh, 1vh) * 10);
+  top: calc(var(--vh, 1vh) * 9);
   left: 1vw;
-  font-size: calc(var(--vh, 1vh) * 4);
+  font-size: 150%;
 }
