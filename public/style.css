@@ -170,8 +170,8 @@ table, th, td {
 }
 
 #pop-up-button{
-  width: 10%;
-  height: 10%;
+  width: 1vw;
+  height: 1vw;
   font-size: 50%;
   position: absolute;
   top: 0;
