@@ -49,9 +49,9 @@ body {
   padding: 0;
 
   position: absolute;
-  left: 83vw;
+  left: 80.5vw;
   top: 1vh;
-  z-index: 100;
+  z-index: 10;
 }
 
 #map-menu>li{
@@ -59,13 +59,13 @@ body {
   
 }
 #map-menu>li>button{
-  width: 3vw;
-  height: calc(var(--vh, 1vh) * 5);
-  line-height: calc(var(--vh, 1vh) * 5);
+  width: 3.5vw;
+  height: calc(var(--vh, 1vh) * 7);
+  line-height: calc(var(--vh, 1vh) * 7);
   text-align: center;
   margin-right: 0.25vw;
   overflow: hidden;
-  font-size: calc(var(--vh, 1vh) * 2);
+  font-size: 100%;
   
 }
 #menu {
@@ -193,9 +193,9 @@ table, th, td {
 }
 
 #pop-up-button{
-  width: 2vw;
-  height: calc(var(--vh, 1vh) * 5);
-  font-size: 2vw;
+  width: 10%;
+  height: 10%;
+  font-size: 100%;
   position: absolute;
   top: 0;
   right: 0;
@@ -205,10 +205,12 @@ table, th, td {
   position: absolute;
   top: calc(var(--vh, 1vh) * 1);
   left: 1vw;
+  font-size: calc(var(--vh, 1vh) * 8);
 }
 
 #pop-up-detail{
   position: absolute;
   top: calc(var(--vh, 1vh) * 10);
   left: 1vw;
+  font-size: calc(var(--vh, 1vh) * 4);
 }
