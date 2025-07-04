@@ -41,7 +41,7 @@ body {
   text-align: center;
   margin-right: 0.25vw;
   overflow: hidden;
-  font-size: calc(var(--vh, 1vh) * 2);
+  font-size: 100%;
 }
 #map-menu{
   display: flex;
