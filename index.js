@@ -10,7 +10,9 @@ import fs from 'fs';
 import pool from './database/mariadb.js';
 
 
-
+const conn = await pool.getConnection();
+const locationAllRow = await conn.query('SELECT * FROM locations');
+conn.release();
 
 const app = express();
 
@@ -64,10 +66,14 @@ async function api() {
 app.post('/search-location-click', async (req, res)=>{
     const clickedId = req.body.id;
 
-    const conn = await pool.getConnection();
-    const rows = await conn.query(`SELECT location_name,detail FROM locations WHERE id = '${clickedId}'`);
-    res.json(rows);
-    conn.release();
+    for(const locationRow of locationAllRow)
+    {
+        if(locationRow.id == clickedId)
+        {
+            res.json(locationRow);
+            
+        }
+    }
 });
 
 app.get('/',async (req, res)=>{

@@ -30,8 +30,8 @@ selectable.forEach((item)=>{
 	    });
         //promiss 있는  
         fetchLocationDetail = await res.json();
-        popUpTitle.innerText = fetchLocationDetail[0].location_name;
-        popUpDetail.innerText = fetchLocationDetail[0].detail;
+        popUpTitle.innerText = fetchLocationDetail.location_name;
+        popUpDetail.innerText = fetchLocationDetail.detail;
 
         popUp.classList.remove('hidden');
 
@@ -46,16 +46,16 @@ selectable.forEach((item)=>{
             });
         }
         
-        if(item.id ==  "3floor-stairs1" || item.id == "2floor-stairs1" || item.id == "1floor-stairs1" || item.id == "B1floor-stairs1"){
+        if(clickingId ==  "3floor-stairs1" || clickingId == "2floor-stairs1" || clickingId == "1floor-stairs1" || clickingId == "B1floor-stairs1"){
             clickings = stairs1;
         }
-        else if(item.id ==  "3floor-stairs2" || item.id == "2floor-stairs2" || item.id == "1floor-stairs2" || item.id == "B1floor-stairs2"){
+        else if(clickingId ==  "3floor-stairs2" || clickingId == "2floor-stairs2" || clickingId == "1floor-stairs2" || clickingId == "B1floor-stairs2"){
             clickings = stairs2;
         }
-        else if(item.id ==  "3floor-ev" || item.id == "2floor-ev" || item.id == "1floor-ev" || item.id == "B1floor-ev"){
+        else if(clickingId ==  "3floor-ev" || clickingId == "2floor-ev" || clickingId == "1floor-ev" || clickingId == "B1floor-ev"){
             clickings = ev;
         }
-        else if(item.id == "library" || item.id == "multipurpose-hall"){
+        else if(clickingId == "library" || clickingId == "multipurpose-hall"){
             clickings = libraryOrMultipurposeHall;
         }
         else{
