@@ -1,3 +1,6 @@
+
+
+
 const selectable = document.querySelectorAll(".selectable");
 
 const stairs1 = document.querySelectorAll(".stairs1");
@@ -10,17 +13,16 @@ const popUp = document.querySelector('#pop-up');
 const popUpTitle = document.querySelector('#pop-up-title');
 const popUpDetail = document.querySelector('#pop-up-detail');
 
+
+
 let clickings = null;
 
 let clickingId = null;
 
-
-
-
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
         clickingId = item.id;
-
+        console.log(clickingId);
         const res = await fetch('/search-location-click', {
 		    method: 'POST',
 		    headers: {
