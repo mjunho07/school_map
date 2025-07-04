@@ -176,6 +176,7 @@ table, th, td {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 3;
 }
 
 #pop-up-title{
