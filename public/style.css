@@ -179,12 +179,16 @@ table, th, td {
 }
 
 #pop-up-title{
-  margin-top: 10%;
   margin-left: 1vw;
   font-size: 4vw;
+  z-index: 5;
+  pointer-events:none;
 }
 
 #pop-up-detail{
   margin-left: 1vw;
   font-size: 3vw;
+  z-index: 5;
+  pointer-events:none;
+
 }
