@@ -176,20 +176,16 @@ table, th, td {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 3;
+  opacity: 0.5;
 }
 
 #pop-up-title{
   margin-left: 1vw;
   font-size: 4vw;
-  z-index: 5;
-  pointer-events:none;
 }
 
 #pop-up-detail{
   margin-left: 1vw;
   font-size: 3vw;
-  z-index: 5;
-  pointer-events:none;
 
 }
