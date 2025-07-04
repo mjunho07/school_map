@@ -179,6 +179,7 @@ table, th, td {
 }
 
 #pop-up-title{
+  margin-top: 10%;
   margin-left: 1vw;
   font-size: 4vw;
 }
