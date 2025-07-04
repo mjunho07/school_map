@@ -172,22 +172,18 @@ table, th, td {
 #pop-up-button{
   width: 10%;
   height: 10%;
-  font-size: 100%;
+  font-size: 50%;
   position: absolute;
   top: 0;
   right: 0;
 }
 
 #pop-up-title{
-  position: absolute;
-  top: 0;
-  left: 1vw;
-  font-size: 200%;
+  margin-left: 1vw;
+  font-size: 4vw;
 }
 
 #pop-up-detail{
-  position: absolute;
-  top: calc(var(--vh, 1vh) * 9);
-  left: 1vw;
-  font-size: 150%;
+  margin-left: 1vw;
+  font-size: 3vw;
 }
