@@ -33,8 +33,8 @@ selectable.forEach((item)=>{
         //promiss 있는  
         fetchLocationDetail = await res.json();
 
-        popUpTitle.innerText = fetchLocationDetail[0].location_name;
-        popUpDetail.innerText = fetchLocationDetail[0].detail;
+        popUpTitle.innerText = fetchLocationDetail.location_name;
+        popUpDetail.innerText = fetchLocationDetail.detail;
 
         popUp.classList.remove('hidden');
 
