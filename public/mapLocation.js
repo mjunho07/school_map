@@ -94,7 +94,7 @@ pupUpButton.addEventListener('click',()=>{
 searchBox.addEventListener("keydown", async function (event){
     if(event.key == "Enter")
     {
-        const res = await fetch('/search-location', {
+        const res = await fetch('/search', {
 		    method: 'POST',
 		    headers: {
 		    	'Content-Type': 'application/json'
