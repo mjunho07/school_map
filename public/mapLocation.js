@@ -32,6 +32,7 @@ selectable.forEach((item)=>{
 	    });
         //promiss 있는  
         const fetchLocationDetail = await res.json();
+        console.log(fetchLocationDetail);
 
         popUpTitle.innerText = fetchLocationDetail.location_name;
         popUpDetail.innerText = fetchLocationDetail.detail;
@@ -100,7 +101,6 @@ searchBox.addEventListener("keydown", async function (event){
 	    	},
 		    body: JSON.stringify({searching:searchBox.value})
 	    });
-        console.log(res)
         const fetchLocations = await res.json();
         console.log(fetchLocations);
     }   
