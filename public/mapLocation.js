@@ -13,7 +13,7 @@ const popUp = document.querySelector('#pop-up');
 const popUpTitle = document.querySelector('#pop-up-title');
 const popUpDetail = document.querySelector('#pop-up-detail');
 
-
+const searchBox = document.querySelector("#search-box");
 
 let clickings = null;
 
@@ -90,4 +90,19 @@ pupUpButton.addEventListener('click',()=>{
     clickingId = null;
 });
 
-	
+searchBox.addEventListener("keydown", async function (event){
+    if(event.key == "Enter")
+    {
+        const res = await fetch('/search-location', {
+		    method: 'POST',
+		    headers: {
+		    	'Content-Type': 'application/json'
+	    	},
+		    body: JSON.stringify({searching:searchBox.value})
+	    });
+        
+        const fetchLocations = await res.json();
+        console.log(fetchLocations);
+    }   
+
+});

@@ -9,10 +9,14 @@ import https from 'https';
 import fs from 'fs';
 import pool from './database/mariadb.js';
 
+async function getAllLocation() {
+    const conn = await pool.getConnection();
+    const rows = await conn.query('SELECT * FROM locations');
+    conn.release();
+    return rows;
+}
 
-const conn = await pool.getConnection();
-const locationAllRow = await conn.query('SELECT * FROM locations');
-conn.release();
+const locationAllRow = getAllLocation();
 
 const app = express();
 
@@ -70,11 +74,24 @@ app.post('/search-location-click', async (req, res)=>{
     {
         if(locationRow.id == clickedId)
         {
+            
             res.json(locationRow);
             
         }
     }
 });
+
+app.post('/search-location', async (req, res)=>{
+    const searchString = req.body.searching;
+    const rows = await conn.query(`
+        SELECT l.id, l.location_name, l.detail
+        FROM keywords AS k
+        JOIN locations AS l ON k.location_name = l.location_name
+        WHERE k.keyword LIKE '%${searchString}%'
+    `);
+    res.json(rows);
+});
+
 
 app.get('/',async (req, res)=>{
     const resultList = await api();
