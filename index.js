@@ -92,12 +92,7 @@ app.post('/search', async (req, res)=>{
     const searchString = req.body.searching;
     
     const conn = await pool.getConnection();
-    const rows = await conn.query(`
-        SELECT l.id, l.location_name, l.detail
-        FROM keywords k
-        JOIN locations l ON k.location_name = l.location_name
-        WHERE k.keyword LIKE "%${searchString}%"
-    `);
+    const rows = await conn.query(`SELECT locations.id, locations.location_name, locations.detail FROM keywords JOIN locations ON keywords.location_name = locations.location_name WHERE keywords.keyword LIKE "%${searchString}%"`);
     conn.release();
     res.json(rows);
 });
