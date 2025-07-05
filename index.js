@@ -9,14 +9,20 @@ import https from 'https';
 import fs from 'fs';
 import pool from './database/mariadb.js';
 
-async function getAllLocation() {
-    const conn = await pool.getConnection();
-    const rows = await conn.query('SELECT * FROM locations');
-    conn.release();
-    return rows;
-}
+// async function getAllLocation() {
+//     const conn = await pool.getConnection();
+//     const rows = await conn.query('SELECT * FROM locations');
+//     conn.release();
+//     return rows;
+// }
 
-const locationAllRow = getAllLocation();
+// const locationAllRow = getAllLocation();
+
+const conn = await pool.getConnection();
+const locationAllRow = await conn.query('SELECT * FROM locations');
+conn.release();
+
+
 
 const app = express();
 
