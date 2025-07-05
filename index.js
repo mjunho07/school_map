@@ -90,7 +90,7 @@ app.post('/search-location', async (req, res)=>{
         SELECT l.id, l.location_name, l.detail
         FROM keywords AS k
         JOIN locations AS l ON k.location_name = l.location_name
-        WHERE k.keyword LIKE '%${searchString}%'
+        WHERE k.keyword LIKE "%${searchString}%"
     `);
     conn.release();
     res.json(rows);
