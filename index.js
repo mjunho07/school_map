@@ -82,13 +82,17 @@ app.post('/search-location-click', async (req, res)=>{
 });
 
 app.post('/search-location', async (req, res)=>{
+    
     const searchString = req.body.searching;
+    
+    const conn = await pool.getConnection();
     const rows = await conn.query(`
         SELECT l.id, l.location_name, l.detail
         FROM keywords AS k
         JOIN locations AS l ON k.location_name = l.location_name
         WHERE k.keyword LIKE '%${searchString}%'
     `);
+    conn.release();
     res.json(rows);
 });
 

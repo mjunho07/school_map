@@ -31,7 +31,7 @@ selectable.forEach((item)=>{
 		    body: JSON.stringify({id:clickingId})
 	    });
         //promiss 있는  
-        fetchLocationDetail = await res.json();
+        const fetchLocationDetail = await res.json();
 
         popUpTitle.innerText = fetchLocationDetail.location_name;
         popUpDetail.innerText = fetchLocationDetail.detail;
