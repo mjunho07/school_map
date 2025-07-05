@@ -91,18 +91,18 @@ pupUpButton.addEventListener('click',()=>{
     clickingId = null;
 });
 
-// searchBox.addEventListener("keydown", async function (event){
-//     if(event.key == "Enter")
-//     {
-//         const res = await fetch('/search-location', {
-// 		    method: 'POST',
-// 		    headers: {
-// 		    	'Content-Type': 'application/json'
-// 	    	},
-// 		    body: JSON.stringify({searching:searchBox.value})
-// 	    });
-//         const fetchLocations = await res.json();
-//         console.log(fetchLocations);
-//     }   
+searchBox.addEventListener("keydown", async function (event){
+    if(event.key == "Enter")
+    {
+        const res = await fetch('/search-location', {
+		    method: 'POST',
+		    headers: {
+		    	'Content-Type': 'application/json'
+	    	},
+		    body: JSON.stringify({searching:searchBox.value})
+	    });
+        const fetchLocations = await res.json();
+        console.log(fetchLocations);
+    }   
 
-// });
+});
