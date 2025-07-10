@@ -82,7 +82,7 @@ app.post('/search-location-click', async (req, res)=>{
         {
             
             res.json(locationRow);
-            
+            break;
         }
     }
 });
