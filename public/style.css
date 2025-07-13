@@ -189,3 +189,10 @@ table, th, td {
   font-size: 2vw;
 
 }
+
+#searching-layout{
+  height: calc(var(--vh, 1vh) * 80);
+  width: 30vw;
+  position: relative;
+  margin-top: calc(var(--vh, 1vh) * 2);
+}

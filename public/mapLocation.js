@@ -15,36 +15,23 @@ const popUpDetail = document.querySelector('#pop-up-detail');
 
 const searchBox = document.querySelector("#search-box");
 
-let clickings = null;
+let clickings = [];
 
 let clickingId = null;
 
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
         clickingId = item.id;
-        console.log(clickingId);
-        const res = await fetch('/search-location-click', {
-		    method: 'POST',
-		    headers: {
-		    	'Content-Type': 'application/json'
-	    	},
-		    body: JSON.stringify({id:clickingId})
-	    });
-        //promiss 있는  
-        const fetchLocationDetail = await res.json();
-        console.log(fetchLocationDetail);
-
-        popUpTitle.innerText = fetchLocationDetail.location_name;
-        popUpDetail.innerText = fetchLocationDetail.detail;
+        
 
         popUp.classList.remove('hidden');
 
-        if(clickings != null && clickings[0].id == "etc"){
+        if(clickingId != null && clickings[0].id == "etc"){
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#1B4433');
             });
         }
-        else if(clickings != null){
+        else if(clickingId != null){
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#79C498')
             });
@@ -77,6 +64,20 @@ selectable.forEach((item)=>{
                 clicking.setAttribute('fill','#99E4B8');
             });
         }
+
+        const res = await fetch('/search-location-click', {
+		    method: 'POST',
+		    headers: {
+		    	'Content-Type': 'application/json'
+	    	},
+		    body: JSON.stringify({id:clickingId})
+	    });
+        //promiss 있는  
+        const fetchLocationDetail = await res.json();
+       
+
+        popUpTitle.innerText = fetchLocationDetail.location_name;
+        popUpDetail.innerText = fetchLocationDetail.detail;
     });
 });
 
@@ -87,7 +88,7 @@ pupUpButton.addEventListener('click',()=>{
         clicking.setAttribute('fill','#79C498');
     });
 
-    clickings = null;
+    clickings = [];
     clickingId = null;
 });
 
@@ -102,7 +103,6 @@ searchBox.addEventListener("keydown", async function (event){
 		    body: JSON.stringify({searching:searchBox.value})
 	    });
         const fetchLocations = await res.json();
-        console.log(fetchLocations);
     }   
 
 });

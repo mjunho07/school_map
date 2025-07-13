@@ -7,20 +7,11 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import https from 'https';
 import fs from 'fs';
-import pool from './database/mariadb.js';
+// import pool from './database/mariadb.js';
 
-// async function getAllLocation() {
-//     const conn = await pool.getConnection();
-//     const rows = await conn.query('SELECT * FROM locations');
-//     conn.release();
-//     return rows;
-// }
-
-// const locationAllRow = getAllLocation();
-
-const conn = await pool.getConnection();
-const locationAllRow = await conn.query('SELECT * FROM locations');
-conn.release();
+// const conn = await pool.getConnection();
+// const locationAllRow = await conn.query('SELECT * FROM locations');
+// conn.release();
 
 
 
@@ -92,7 +83,11 @@ app.post('/search', async (req, res)=>{
     const searchString = req.body.searching;
     
     const conn = await pool.getConnection();
-    const rows = await conn.query(`SELECT locations.id, locations.location_name, locations.detail FROM keywords JOIN locations ON keywords.location_name = locations.location_name WHERE keywords.keyword LIKE "%${searchString}%"`);
+    const rows = await conn.query(`
+        SELECT DISTINCT locations.id, locations.location_name, locations.detail FROM keywords 
+        JOIN locations ON keywords.location_name = locations.location_name 
+        WHERE keywords.keyword LIKE "%${searchString}%"
+        `);
     conn.release();
     res.json(rows);
 });
@@ -108,15 +103,15 @@ app.listen(3000, () => {
     console.log('Server is running 80');
 });
 
-const options = {
-        key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
+// const options = {
+//         key: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/privkey.pem'),
+//         cert: fs.readFileSync('/etc/letsencrypt/live/web309.duckdns.org/fullchain.pem')
 
-};
-https.createServer(options, app).listen(3030, ()=>{
-        console.log('Server is running 443');
+// };
+// https.createServer(options, app).listen(3030, ()=>{
+//         console.log('Server is running 443');
 
-});
+// });
 
 
 
