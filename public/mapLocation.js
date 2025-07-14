@@ -125,6 +125,7 @@ searchBox.addEventListener("keydown", async function (event){
 
 locationsLayout.addEventListener("click", (e) => {
     if(e.target.tagname === 'DIV'){
+        popUp.classList.remove('hidden');
         index = e.target.dataset.index;
         popUpTitle.textContent = fetchLocations[index].location_name;
         popUpDetail.textContent = fetchLocations[index].detail;
