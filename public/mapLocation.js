@@ -15,7 +15,7 @@ const popUpDetail = document.querySelector('#pop-up-detail');
 
 const searchBox = document.querySelector("#search-box");
 
-let clickings = [];
+let clickings = [{id:"none"}];
 
 let clickingId = null;
 
