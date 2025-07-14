@@ -21,10 +21,12 @@ let clickingId = null;
 
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
-        clickingId = item.id;
+        
         
 
         popUp.classList.remove('hidden');
+
+        clickingId = item.id;
 
         if(clickingId != null && clickings[0].id == "etc"){
             clickings.forEach((clicking)=>{
@@ -53,7 +55,7 @@ selectable.forEach((item)=>{
             clickings = [item];
         }
         
-        if(item.id == "etc")
+        if(clickingId == "etc")
         {
             clickings.forEach((clicking)=>{
                 clicking.setAttribute('fill','#2B5443')
