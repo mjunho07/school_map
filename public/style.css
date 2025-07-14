@@ -190,9 +190,17 @@ table, th, td {
 
 }
 
-#searching-layout{
+#locations-layout{
+  width: 29vw;
   height: calc(var(--vh, 1vh) * 80);
-  width: 30vw;
-  position: relative;
-  margin-top: calc(var(--vh, 1vh) * 2);
+  position: absolute;
+  top: calc(var(--vh, 1vh) * 17);
+  left: 0.5vw;
+  overflow: auto;
+}
+
+#time-class-select{
+  position: absolute;
+  top: calc(var(--vh, 1vh) * 10);
+  left: 0;
 }

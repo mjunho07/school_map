@@ -30,8 +30,31 @@
             </div>
             <div id="search-window" class="">
                 <input type="text" id="search-box" >
+				<div id="locations-layout">
+					
+					
+				</div>
+				<div id="pop-up" class="">
+					<button id="pop-up-button" class="">X</button>
+					<h1 id="pop-up-title"></h1>
+					<p id="pop-up-detail"></p>
+				</div>
             </div>
             <div id="time-window" class="hidden">
+				<select id="time-class-select" class="hidden">
+					<option value="3-1">3학년 1반</option>
+					<option value="3-2">3학년 2반</option>
+					<option value="3-3">3학년 3반</option>
+					<option value="3-4">3학년 4반</option>
+					<option value="3-5">3학년 5반</option>
+					<option value="3-6">3학년 6반</option>
+					<option value="3-7">3학년 7반</option>
+					<option value="3-8">3학년 8반</option>
+					<option value="3-9" selected>3학년 9반</option>
+					<option value="3-10">3학년 10반</option>
+					<option value="3-11">3학년 11반</option>
+					<option value="3-12">3학년 12반</option>
+				</select>
                 <table id="time-table">
                     {% if list %}
                     {% for time in list%}
@@ -46,15 +69,13 @@
                     {% endif %}
                     
                 </table>
-            </div>
-			<div id="pop-up" class="">
-				<button id="pop-up-button" class="">X</button>
-				<h1 id="pop-up-title"></h1>
-				<p id="pop-up-detail"></p>
-			</div>
 
-			<div id="searching-layout" class=""></div>
-        </div>
+				
+            </div>
+			
+			
+			
+    </div>
         <div id="left-window-button" class="location-center"></div>
 <svg id="icons" class="icons-and-map-left-win-on" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
  width="247.5px" height="184.773px" viewBox="0 0 247.5 184.773" enable-background="new 0 0 247.5 184.773" xml:space="preserve">
