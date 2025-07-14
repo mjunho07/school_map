@@ -9,6 +9,8 @@ import https from 'https';
 import fs from 'fs';
 // import pool from './database/mariadb.js';
 
+
+
 // const conn = await pool.getConnection();
 // const locationAllRow = await conn.query('SELECT * FROM locations');
 // conn.release();
@@ -74,7 +76,6 @@ app.post('/search-location-click', async (req, res)=>{
             
             res.json(locationRow);
             break;
-            
         }
     }
 });
@@ -84,11 +85,7 @@ app.post('/search', async (req, res)=>{
     const searchString = req.body.searching;
     
     const conn = await pool.getConnection();
-    const rows = await conn.query(`
-        SELECT DISTINCT locations.id, locations.location_name, locations.detail FROM keywords 
-        JOIN locations ON keywords.location_name = locations.location_name 
-        WHERE keywords.keyword LIKE "%${searchString}%"
-        `);
+    const rows = await conn.query(`SELECT locations.id, locations.location_name, locations.detail FROM keywords JOIN locations ON keywords.location_name = locations.location_name WHERE keywords.keyword LIKE "%${searchString}%"`);
     conn.release();
     res.json(rows);
 });
