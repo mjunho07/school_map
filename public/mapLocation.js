@@ -15,6 +15,8 @@ const popUpDetail = document.querySelector('#pop-up-detail');
 
 const searchBox = document.querySelector("#search-box");
 
+const locationsLayout = document.querySelector("#locations-layout");
+
 let clickings = [];
 
 let clickingId = null;
@@ -68,8 +70,6 @@ selectable.forEach((item)=>{
 
         popUp.classList.remove('hidden');
 
-        locationOffOn(item);
-
         const res = await fetch('/search-location-click', {
 		    method: 'POST',
 		    headers: {
@@ -83,6 +83,10 @@ selectable.forEach((item)=>{
 
         popUpTitle.innerText = fetchLocationDetail.location_name;
         popUpDetail.innerText = fetchLocationDetail.detail;
+
+        locationOffOn(item);
+
+        
     });
 });
 
@@ -108,6 +112,11 @@ searchBox.addEventListener("keydown", async function (event){
 		    body: JSON.stringify({searching:searchBox.value})
 	    });
         const fetchLocations = await res.json();
+        fetchLocations.forEach((item)=>{
+            const div = document.createElement("div");
+            div.textContent = item.location_name;
+            locationsLayout.appendChild(div);
+        });
     }   
 
 });
