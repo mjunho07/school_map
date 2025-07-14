@@ -101,24 +101,24 @@ pupUpButton.addEventListener('click',()=>{
     clickingId = null;
 });
 
-searchBox.addEventListener("keydown", async function (event){
-    if(event.key == "Enter")
-    {
-        locationsLayout.replaceChildren();
-        const res = await fetch('/search', {
-		    method: 'POST',
-		    headers: {
-		    	'Content-Type': 'application/json'
-	    	},
-		    body: JSON.stringify({searching:searchBox.value})
-	    });
-        const fetchLocations = await res.json();
-        fetchLocations.forEach((item)=>{
+// searchBox.addEventListener("keydown", async function (event){
+//     if(event.key == "Enter")
+//     {
+//         locationsLayout.replaceChildren();
+//         const res = await fetch('/search', {
+// 		    method: 'POST',
+// 		    headers: {
+// 		    	'Content-Type': 'application/json'
+// 	    	},
+// 		    body: JSON.stringify({searching:searchBox.value})
+// 	    });
+//         const fetchLocations = await res.json();
+//         fetchLocations.forEach((item)=>{
             
-            const div = document.createElement("div");
-            div.textContent = item.location_name;
-            locationsLayout.appendChild(div);
-        });
-    }   
+//             const div = document.createElement("div");
+//             div.textContent = item.location_name;
+//             locationsLayout.appendChild(div);
+//         });
+//     }   
 
-});
+// });
