@@ -21,7 +21,10 @@ let clickings = [];
 
 let clickingId = null;
 
+let fetchLocations = [];
+
 function locationOffOn(item){
+    popUp.classList.remove('hidden');
     if(clickingId != null && clickings[0].id == "etc"){
         clickings.forEach((clicking)=>{
             clicking.setAttribute('fill','#1B4433');
@@ -65,11 +68,6 @@ function locationOffOn(item){
 
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
-        
-        
-
-        popUp.classList.remove('hidden');
-
         locationOffOn(item);
 
         const res = await fetch('/search-location-click', {
@@ -83,12 +81,8 @@ selectable.forEach((item)=>{
         const fetchLocationDetail = await res.json();
        
 
-        popUpTitle.innerText = fetchLocationDetail.location_name;
-        popUpDetail.innerText = fetchLocationDetail.detail;
-
-        
-
-        
+        popUpTitle.textContent = fetchLocationDetail.location_name;
+        popUpDetail.textContent = fetchLocationDetail.detail;
     });
 });
 
@@ -114,13 +108,25 @@ searchBox.addEventListener("keydown", async function (event){
 	    	},
 		    body: JSON.stringify({searching:searchBox.value})
 	    });
-        const fetchLocations = await res.json();
-        fetchLocations.forEach((item)=>{
+        fetchLocations = await res.json();
+        fetchLocations.forEach((item, index)=>{
             
             const div = document.createElement("div");
             div.textContent = item.location_name;
+            div.dataset.index = index;
             locationsLayout.appendChild(div);
+
         });
+
+        
     }   
 
+});
+
+locationsLayout.addEventListener("click", (e) => {
+    if(e.target.tagname === 'DIV'){
+        index = e.target.dataset.index;
+        popUpTitle.textContent = fetchLocations[index].location_name;
+        popUpDetail.textContent = fetchLocations[index].detail;
+    }
 });
