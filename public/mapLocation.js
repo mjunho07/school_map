@@ -104,6 +104,7 @@ pupUpButton.addEventListener('click',()=>{
 searchBox.addEventListener("keydown", async function (event){
     if(event.key == "Enter")
     {
+        event.replaceChildren();
         const res = await fetch('/search', {
 		    method: 'POST',
 		    headers: {
@@ -113,6 +114,7 @@ searchBox.addEventListener("keydown", async function (event){
 	    });
         const fetchLocations = await res.json();
         fetchLocations.forEach((item)=>{
+            
             const div = document.createElement("div");
             div.textContent = item.location_name;
             locationsLayout.appendChild(div);
