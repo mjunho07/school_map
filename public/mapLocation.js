@@ -133,7 +133,6 @@ locationsLayout.addEventListener("click", (e) => {
         selectable.forEach((item)=>{
             if(fetchLocations[index].id == item.id){
                 locationOffOn(item);
-                break;
             }
         })
 
