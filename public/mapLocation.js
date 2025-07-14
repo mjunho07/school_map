@@ -19,6 +19,48 @@ let clickings = [];
 
 let clickingId = null;
 
+function locationOffOn(item){
+    if(clickingId != null && clickings[0].id == "etc"){
+        clickings.forEach((clicking)=>{
+            clicking.setAttribute('fill','#1B4433');
+        });
+    }
+    else if(clickingId != null){
+        clickings.forEach((clicking)=>{
+            clicking.setAttribute('fill','#79C498')
+        });
+    }
+    clickingId = item.id;
+    
+    if(clickingId ==  "3floor-stairs1" || clickingId == "2floor-stairs1" || clickingId == "1floor-stairs1" || clickingId == "B1floor-stairs1"){
+        clickings = stairs1;
+    }
+    else if(clickingId ==  "3floor-stairs2" || clickingId == "2floor-stairs2" || clickingId == "1floor-stairs2" || clickingId == "B1floor-stairs2"){
+        clickings = stairs2;
+    }
+    else if(clickingId ==  "3floor-ev" || clickingId == "2floor-ev" || clickingId == "1floor-ev" || clickingId == "B1floor-ev"){
+        clickings = ev;
+    }
+    else if(clickingId == "library" || clickingId == "multipurpose-hall"){
+        clickings = libraryOrMultipurposeHall;
+    }
+    else{
+        clickings = [item];
+    }
+    
+    if(clickingId == "etc")
+    {
+        clickings.forEach((clicking)=>{
+            clicking.setAttribute('fill','#2B5443')
+        });
+    }
+    else{
+        clickings.forEach((clicking)=>{
+            clicking.setAttribute('fill','#99E4B8');
+        });
+    }
+}
+
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
         
@@ -26,46 +68,7 @@ selectable.forEach((item)=>{
 
         popUp.classList.remove('hidden');
 
-        if(clickingId != null && clickings[0].id == "etc"){
-            clickings.forEach((clicking)=>{
-                clicking.setAttribute('fill','#1B4433');
-            });
-        }
-        else if(clickingId != null){
-            clickings.forEach((clicking)=>{
-                clicking.setAttribute('fill','#79C498')
-            });
-        }
-
-        clickingId = item.id;
-        
-        if(clickingId ==  "3floor-stairs1" || clickingId == "2floor-stairs1" || clickingId == "1floor-stairs1" || clickingId == "B1floor-stairs1"){
-            clickings = stairs1;
-        }
-        else if(clickingId ==  "3floor-stairs2" || clickingId == "2floor-stairs2" || clickingId == "1floor-stairs2" || clickingId == "B1floor-stairs2"){
-            clickings = stairs2;
-        }
-        else if(clickingId ==  "3floor-ev" || clickingId == "2floor-ev" || clickingId == "1floor-ev" || clickingId == "B1floor-ev"){
-            clickings = ev;
-        }
-        else if(clickingId == "library" || clickingId == "multipurpose-hall"){
-            clickings = libraryOrMultipurposeHall;
-        }
-        else{
-            clickings = [item];
-        }
-        
-        if(item.id == "etc")
-        {
-            clickings.forEach((clicking)=>{
-                clicking.setAttribute('fill','#2B5443')
-            });
-        }
-        else{
-            clickings.forEach((clicking)=>{
-                clicking.setAttribute('fill','#99E4B8');
-            });
-        }
+        locationOffOn(item);
 
         const res = await fetch('/search-location-click', {
 		    method: 'POST',
