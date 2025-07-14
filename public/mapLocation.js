@@ -129,15 +129,16 @@ searchBox.addEventListener("keydown", async function (event){
 locationsLayout.addEventListener("click", (e) => {
     if(e.target.tagName === 'DIV'){
         
-
+        index = e.target.dataset.index;
+        popUpTitle.textContent = fetchLocations[index].location_name;
+        popUpDetail.textContent = fetchLocations[index].detail;
+        
         selectable.forEach((item)=>{
             if(fetchLocations[index].id == item.id){
                 locationOffOn(item);
             }
         })
 
-        index = e.target.dataset.index;
-        popUpTitle.textContent = fetchLocations[index].location_name;
-        popUpDetail.textContent = fetchLocations[index].detail;
+        
     }
 });
