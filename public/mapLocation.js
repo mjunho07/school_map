@@ -15,13 +15,13 @@ const popUpDetail = document.querySelector('#pop-up-detail');
 
 const searchBox = document.querySelector("#search-box");
 
-let clickings = [{id:"none"}];
+let clickings = [];
 
 let clickingId = null;
 
 selectable.forEach((item)=>{
     item.addEventListener("click",async ()=>{
-        clickingId = item.id;
+        
         
 
         popUp.classList.remove('hidden');
@@ -36,6 +36,8 @@ selectable.forEach((item)=>{
                 clicking.setAttribute('fill','#79C498')
             });
         }
+
+        clickingId = item.id;
         
         if(clickingId ==  "3floor-stairs1" || clickingId == "2floor-stairs1" || clickingId == "1floor-stairs1" || clickingId == "B1floor-stairs1"){
             clickings = stairs1;
