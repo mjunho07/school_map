@@ -25,6 +25,7 @@ let fetchLocations = [];
 
 function locationOffOn(item){
     popUp.classList.remove('hidden');
+    
     if(clickingId != null && clickings[0].id == "etc"){
         clickings.forEach((clicking)=>{
             clicking.setAttribute('fill','#1B4433');
@@ -35,6 +36,8 @@ function locationOffOn(item){
             clicking.setAttribute('fill','#79C498')
         });
     }
+
+
     clickingId = item.id;
     
     if(clickingId ==  "3floor-stairs1" || clickingId == "2floor-stairs1" || clickingId == "1floor-stairs1" || clickingId == "B1floor-stairs1"){
@@ -126,7 +129,14 @@ searchBox.addEventListener("keydown", async function (event){
 locationsLayout.addEventListener("click", (e) => {
     if(e.target.tagName === 'DIV'){
         
-        popUp.classList.remove('hidden');
+
+        selectable.forEach((item)=>{
+            if(fetchLocations[index].id == item.id){
+                locationOffOn(item);
+                break;
+            }
+        })
+
         index = e.target.dataset.index;
         popUpTitle.textContent = fetchLocations[index].location_name;
         popUpDetail.textContent = fetchLocations[index].detail;
